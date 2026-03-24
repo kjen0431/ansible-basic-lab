@@ -1,0 +1,4 @@
+role: db
+env_type: development
+db_port: 5432
+max_connections: 200

@@ -52,3 +52,18 @@
       when:
         - run_number == 41
         - run_string == "automation"
+
+    - name: OR operator
+      ansible.builtin.debug:
+        msg: "Using OR operator"
+      when: run_number == 12345 or run_string == "automation"
+
+    - name: NOT operator
+      ansible.builtin.debug:
+        msg: "Using NOT operator"
+      when: not run_number == 12345
+
+    - name: AND OR NOT operator
+      ansible.builtin.debug:
+        msg: "Using AND OR NOT operator"
+      when: (run_number == 42 and run_string == "automation") or (not run_boolean1)
